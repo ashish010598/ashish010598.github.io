@@ -1,0 +1,81 @@
+create table Donor(
+			name varchar(20),
+			address varchar(30),
+			phno int(10),
+			email varchar(30),
+			age int(3),
+			sex varchar(5),
+			blood_group varchar(3),
+			did int(10) AUTO_INCREMENT,
+			empEmail varchar(30),
+			CONSTRAINT donor_pk PRIMARY KEY(did,empEmail),
+			CONSTRAINT donor_fk FOREIGN  KEY (empEmail) references Receptionist(email) 
+		  	
+		 );
+
+create table Receptionist(
+				fname varchar(10),
+				lname varchar(10),
+				bno int(10),
+				email varchar(30) PRIMARY KEY, 
+				phno int(10),
+				password varchar(10)
+			);
+
+create table Blood_Bank(
+				
+				bno int(10) PRIMARY KEY
+		      );
+create table Blood_Bank_Manager(
+					fname varchar(10),
+					lname varchar(10),
+					bno int(10),
+
+					email_id varchar(30) PRIMARY KEY,
+					phno int(10),
+					password varchar(10) 
+				);
+create table Hospital(
+			address varchar(30),
+			email varchar(30) PRIMARY KEY,
+			name varchar(20) UNIQUE,
+			phno int(10),
+			password varchar(10)
+		     );
+create table ordersblood(
+			hemail varchar(30),
+			name varchar(20),
+                        oid int(5) auto_increment,
+			blood_type varchar(4),
+			quantity int(10),
+			CONSTRAINT ordersblood_pk PRIMARY KEY(oid),
+			CONSTRAINT ordersblood_fk1 FOREIGN KEY (name) references Hospital(name),
+			CONSTRAINT ordersblood_fk2 FOREIGN KEY (hemail) references Hospital(email)
+					
+);
+
+create table previousorders(
+			bemail varchar(30),
+			name varchar(20),
+                        oid int(5) auto_increment,
+			blood_type varchar(4),
+			quantity int(10),
+			CONSTRAINT ordersblood_pk1 PRIMARY KEY(oid)
+					
+);
+create table Blood(
+			blood_type varchar(4), 
+			cost int(6), 
+			did int(10),
+			bno int(10),
+			CONSTRAINT blood_pk PRIMARY KEY(did,bno),
+			CONSTRAINT blood_fk1 FOREIGN  KEY (did) references Donor(did),
+			CONSTRAINT blood_fk2 FOREIGN  KEY (bno) references Blood_Bank(bno)
+			 
+		  );
+create table feedback( 
+			fname varchar(10),
+			lname varchar(10),
+			email varchar(30),
+			message varchar(100)
+			);

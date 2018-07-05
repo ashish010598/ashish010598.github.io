@@ -1,0 +1,31 @@
+table,td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th,td {
+	padding: 15px;
+}
+th {
+	border: 1px solid white;
+	text-align: center;
+}
+table {
+	border-spacing: 5px;
+	width : 100%;
+}
+tr:nth-child(even){
+	background-color: #eee;
+}
+table th{
+	color: white;
+	background-color: black;
+}
+h1 {
+	font-family: algerian;
+	font-size: 60px;
+}
+#t1 {
+	width:350px;
+	margin-left: 570px;
+	text-align: center;
+}
