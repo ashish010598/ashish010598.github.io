@@ -2,26 +2,72 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Ashish Pathak</title>
+    <title>Ashish Pathak's Repositories</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
+
+    <!-- script
+    ================================================== -->
     <script src="js/modernizr.js"></script>
-    <link rel="icon" href="favicon.ico">
+    <script src="js/pace.min.js"></script>
+
 </head>
 
 <body id="top">
+
+    <!-- header
+    ================================================== -->
     <header class="s-header">
 
         <div class="header-logo">
             <a class="site-logo" href="index.html">
-               <img src="images/logo1.png" alt="Homepage" style="width:200px; heigth:auto;">
+                 <img src="images/logo1.png" alt="Homepage" style="width:200px; heigth:auto;">
             </a>
         </div>
-     </header> <!-- end s-header -->       
+
+        <nav class="header-nav">
+
+            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+            <div class="header-nav__content">
+                <h3>Navigation</h3>
+                
+                <ul class="header-nav__list">
+                    <li><a href="https://drive.google.com/open?id=13EAJjrEqkQGMi5F_gDnAB4vm7dYc00fp" title="home">Certification</a></li>
+                    <li><a class="smoothscroll"  href="#services" title="services">Services</a></li>
+                    <li><a class="smoothscroll"  href="#clients" title="clients">Clients</a></li>
+                     <li><a class="smoothscroll"  href="contactme/index.html" title="about">Contact Me</a></li>
+                </ul>
+                <ul class="header-nav__social">
+                    <li>
+                        <a href="https://www.facebook.com/ashish.pathak.0105"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/ashish-p-a22008106"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/sharmaji_ka.beta_/"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+
+            </div> <!-- end header-nav__content -->
+
+        </nav>  <!-- end header-nav -->
+
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-text">Menu</span>
+            <span class="header-menu-icon"></span>
+        </a>
+
+    </header> <!-- end s-header -->
+
+
+    <!-- home
+    ================================================== -->
     <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/hero-bg.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
         <div class="overlay"></div>
@@ -38,13 +84,21 @@
                     have it all:<br>
                     Beauty and Brains.<br>
                 </h1>
+            </div>
+
+            <div class="home-content__scroll">
+                <a href="#about" class="scroll-link smoothscroll">
+                    <span>Scroll Down</span>
+                </a>
+            </div>
+
             <div class="home-content__line"></div>
 
         </div> <!-- end home-content -->
 
 
         <ul class="home-social">
-            <li>
+                 <li>
                 <a href="https://www.facebook.com/ashish.pathak.0105"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
             </li>
             <li>
@@ -64,9 +118,135 @@
             </li>
         </ul> 
         <!-- end home-social -->
+        </section> <!-- end s-home -->
 
-    </section> <!-- end s-home -->
+        <!-- services
+    ================================================== -->
+    <section id='services' class="s-services">
 
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">What I Do</h3>
+                <h1 class="display-2">I’ve got everything you need to launch and grow your business Online</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row services-list block-1-2 block-tab-full">
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-earth"></i>
+                </div>
+                <div class="service-text">
+                    <h3 class="h2">Web Design</h3>
+                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. 
+                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
+                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
+                    </p>
+                </div>
+            </div>    
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon"><i class="icon-lego-block"></i></div>
+                <div class="service-text">
+                    <h3 class="h2">Web Development</h3>
+                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. 
+                    Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis.
+                    Sunt suscipit voluptas ipsa in tempora esse soluta sint.
+                    </p>
+                </div>
+            </div>
+
+        </div> <!-- end services-list -->
+
+    </section> <!-- end s-services -->
+
+    <!-- clients
+    ================================================== -->
+   <section id="clients" class="s-clients">
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Our Clients</h3>
+                <h1 class="display-2">Glint has been honored to
+                partner up with these clients</h1>
+            </div>
+        </div> <!-- end section-header -->
+
+        <div class="row clients-outer" data-aos="fade-up">
+            <div class="col-full">
+               <div class="container">
+                    <a href="ashish010598.github.io/Ahluwalia" title="" class="clients__slide" style="float:left;"><img src="images/clients/logo1.png"/></a>
+                     <a href="ecellmuj.in" title="" class="clients__slide" style="float:left; margin-left:100px;"><img src="images/clients/logo2.jpg"/></a>
+                    <a href="ashish010598.github.io/bbms" title="" class="clients__slide" style="margin-left:600px;"><img src="images/clients/logo.jpg" /></a>
+                </div>
+            </div> <!-- end col-full -->
+        </div> <!-- end clients-outer -->
+    </section> <!-- end s-clients -->
+
+
+     <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact">
+
+        <div class="overlay"></div>
+        <div class="contact__line"></div>
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Contact Us</h3>
+                <h1 class="display-2 display-2--light">Reach out for a new project or just say hello</h1>
+            </div>
+        </div>
+
+        <div class="row contact-content" data-aos="fade-up">
+            <div class="contact-secondary">
+                <div class="contact-info">
+
+                    <h3 class="h6 hide-on-fullwidth">Contact Info</h3>
+
+                    <div class="cinfo">
+                        <h5>Where to Find Me</h5>
+                        <p>
+                            Manipal University Jaipur<br>
+                            Dhami Kalan,Jaipur<br>
+                            303007, Rajasthan
+                        </p>
+                    </div>
+
+                    <div class="cinfo">
+                        <h5>Email me At</h5>
+                        <p>
+                            ashishpathak0105@gmial.com<br>
+                        </p>
+                    </div>
+
+                    <div class="cinfo">
+                        <h5>Call me At</h5>
+                        <p>
+                            Phone: (+91) 9660266710<br>
+                            Mobile: (+91) 8586007141<br>
+                        </p>
+                    </div>
+
+                    <ul class="contact-social">
+                        <li>
+                        <a href="https://www.facebook.com/ashish.pathak.0105"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/ashish-p-a22008106"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/sharmaji_ka.beta_/"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    </ul> <!-- end contact-social -->
+
+                </div> <!-- end contact-info -->
+            </div> <!-- end contact-secondary -->
+
+        </div> <!-- end contact-content -->
+
+    </section> <!-- end s-contact -->
+
+    
     <!-- preloader
     ================================================== -->
     <div id="preloader">
