@@ -8,12 +8,12 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="../css/index.css" rel="stylesheet">
-    <link href="../css/work.css" rel="stylesheet">
-    <title>INDIAN HUMAN RIGHTS COMMISSION</title>
+    <link href="../css/team.css" rel="stylesheet">
+    <title>Our Team - INDIAN HUMAN RIGHTS COMMISSION</title>
     <link rel="icon" type="image/png" href="../img/logo.png" />
 </head>
 
-<body>
+<body class="team-page">
     <div class="top-header">
         <div class="header-info">
             <div class="header-icon"><img src="../img/logo.png" alt="logo" /></div>
@@ -33,79 +33,55 @@
     <div class="topnav">
         <a href="../index.html">Home</a>
         <a href="./about.html">About</a>
-        <a class="active" href="./work.html">What we do</a>
-        <a href="./team.html">Team</a>
+        <a href="./work.html">What we do</a>
+        <a class="active" href="./team.html">Team</a>
         <a href="./contact.html">Contact Us</a>
     </div>
 
-    <div class="hero-image">
-        <div class="hero-text">
-            <h1>What We Do</h1>
-            <p>Indian Human Right Commission</p>
+    <!-- Team Header -->
+    <div class="team-header">
+        <h1>Our Team</h1>
+        <p>Meet the dedicated individuals working for human rights across India</p>
+    </div>
+
+    <!-- Search and Filter Controls -->
+    <div class="team-controls">
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input"
+                placeholder="Search by name, position, or state...">
+            <select id="stateFilter" class="filter-select">
+                <option value="">All States</option>
+            </select>
+        </div>
+        <div class="results-info" id="resultsInfo">
+            Loading members...
         </div>
     </div>
 
-    <div class="work-container-wrapper">
-        <div class="work-container">
-            <div class="work-big">
-                <div class="work-big-img">
-                    <img src="../img/work/work.jpg" alt="work1" />
-                </div>
-                <div class="work-big-text">
-                    <h2>Human Rights</h2>
-                    <p>Human rights are moral principles or norms for certain standards of human behaviour and are
-                        regularly protected in municipal and international law.</p>
-                </div>
-            </div>
-            <div class="work-small">
-                <div class="work">
-                    <div class="work-img">
-                        <img src="../img/work/childRight.webp" alt="work2" />
-                    </div>
-                    <div class="work-text">
-                        <h2>Child Rights</h2>
-                        <p>Child rights are the human rights of children with particular attention to the rights of
-                            special protection and care afforded to minors</p>
-                    </div>
-                </div>
-                <div class="work">
-                    <div class="work-img">
-                        <img src="../img/work/labourLaw.jpg" alt="work2" />
-                    </div>
-                    <div class="work-text">
-                        <h2>Labour Rights</h2>
-                        <p>Labour rights are the legal relationship between workers and employers, usually dealt
-                            with
-                            employment law.</p>
-                    </div>
-                </div>
-                <div class="work">
-                    <div class="work-img">
-                        <img src="../img/work/womenRight.jpeg" alt="work2" />
-                    </div>
-                    <div class="work-text">
-                        <h2>Women Rights</h2>
-                        <p> women rights are the rights and entitlements claimed, usually dealt with women and
-                            domestic crime </p>
-                    </div>
-                </div>
-                <div class="work">
-                    <div class="work-img">
-                        <img src="../img/work/freedomSpeech.jpeg" alt="work2" />
-                    </div>
-                    <div class="work-text">
-                        <h2>Freedom of speech</h2>
-                        <p>Freedom of speech is a principle that supports the freedom of an individual or a
-                            community to
-                            articulate their opinions and ideas without fear of retaliation, censorship, or
-                            legal
-                            sanction.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Loading State -->
+    <div id="loading" class="loading">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Loading team members...</p>
     </div>
 
+    <!-- No Results State -->
+    <div id="noResults" class="no-results" style="display: none;">
+        <i class="fas fa-search"></i>
+        <h3>No members found</h3>
+        <p>Try adjusting your search criteria</p>
+    </div>
+
+    <!-- Team Grid -->
+    <div class="container">
+        <div id="teamGrid" class="team-grid">
+            <!-- Team members will be loaded here by JavaScript -->
+        </div>
+
+        <!-- Pagination -->
+        <div id="pagination" class="pagination">
+            <!-- Pagination buttons will be loaded here by JavaScript -->
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -166,8 +142,10 @@
                 </div>
             </div>
         </div>
-        </div>
     </footer>
+
+    <!-- Team JavaScript -->
+    <script src="../js/team.js"></script>
 </body>
 
 </html>

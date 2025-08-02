@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - IHRC Team Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background: #5a6fd8;
+        }
+
+        .login-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .message {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .message.error {
+            background: #ffebee;
+            color: #c62828;
+            border: 1px solid #ffcdd2;
+        }
+
+        .message.success {
+            background: #e8f5e8;
+            color: #2e7d2e;
+            border: 1px solid #c8e6c9;
+        }
+
+        .admin-panel {
+            display: none;
+            padding: 20px;
+        }
+
+        .panel-header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-header h1 {
+            color: #333;
+        }
+
+        .logout-btn {
+            padding: 10px 20px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: #c82333;
+        }
+
+        .panel-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .members-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .members-table th,
+        .members-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .members-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .btn-icon {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 2px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-edit {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-icon:hover {
+            opacity: 0.8;
+        }
+
+        .add-member-btn {
+            background: #28a745;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .add-member-btn:hover {
+            background: #218838;
+        }
+
+        @media (max-width: 768px) {
+            .panel-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .members-table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Login Form -->
+    <div id="loginContainer" class="login-container">
+        <form id="loginForm" class="login-form">
+            <div class="login-header">
+                <h1><i class="fas fa-shield-alt"></i> Admin Login</h1>
+                <p>IHRC Team Management System</p>
+            </div>
+
+            <div id="loginMessage"></div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required value="admin@ihrc.org">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required value="admin123">
+            </div>
+
+            <button type="submit" id="loginBtn" class="login-btn">
+                <i class="fas fa-sign-in-alt"></i> Sign In
+            </button>
+
+            <div style="text-align: center; margin-top: 20px; font-size: 12px; color: #666;">
+                Default credentials: admin@ihrc.org / admin123
+            </div>
+        </form>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="panel-header">
+            <h1><i class="fas fa-users-cog"></i> Team Management Panel</h1>
+            <button id="logoutBtn" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+
+        <div class="panel-content">
+            <button id="addMemberBtn" class="add-member-btn">
+                <i class="fas fa-plus"></i> Add New Member
+            </button>
+
+            <div id="panelMessage"></div>
+
+            <div id="membersTableContainer">
+                <!-- Members table will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the PHP-compatible JavaScript -->
+    <script src="../js/team-php.js"></script>
+    <script>
+        class AdminPanel {
+            constructor() {
+                this.api = new AdminAPI();
+                this.currentMembers = [];
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.checkAuth();
+            }
+
+            setupEventListeners() {
+                // Login form
+                const loginForm = document.getElementById('loginForm');
+                loginForm.addEventListener('submit', (e) => this.handleLogin(e));
+
+                // Logout button
+                const logoutBtn = document.getElementById('logoutBtn');
+                logoutBtn.addEventListener('click', () => this.handleLogout());
+
+                // Add member button
+                const addMemberBtn = document.getElementById('addMemberBtn');
+                addMemberBtn.addEventListener('click', () => this.showAddMemberForm());
+            }
+
+            checkAuth() {
+                if (this.api.isAuthenticated()) {
+                    this.showAdminPanel();
+                    this.loadMembers();
+                } else {
+                    this.showLoginForm();
+                }
+            }
+
+            async handleLogin(e) {
+                e.preventDefault();
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const loginBtn = document.getElementById('loginBtn');
+                const messageDiv = document.getElementById('loginMessage');
+
+                loginBtn.disabled = true;
+                loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing in...';
+
+                const result = await this.api.login(email, password);
+
+                if (result.success) {
+                    messageDiv.innerHTML = '<div class="message success">Login successful! Redirecting...</div>';
+                    setTimeout(() => {
+                        this.showAdminPanel();
+                        this.loadMembers();
+                    }, 1000);
+                } else {
+                    messageDiv.innerHTML = `<div class="message error">${result.message}</div>`;
+                    loginBtn.disabled = false;
+                    loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+                }
+            }
+
+            async handleLogout() {
+                await this.api.logout();
+                this.showLoginForm();
+            }
+
+            showLoginForm() {
+                document.getElementById('loginContainer').style.display = 'flex';
+                document.getElementById('adminPanel').style.display = 'none';
+                document.getElementById('loginMessage').innerHTML = '';
+            }
+
+            showAdminPanel() {
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('adminPanel').style.display = 'block';
+            }
+
+            async loadMembers() {
+                try {
+                    const response = await fetch(this.api.apiBaseUrl + '/members?limit=1000');
+                    const data = await response.json();
+
+                    if (data.success) {
+                        this.currentMembers = data.data.members;
+                        this.renderMembersTable();
+                    } else {
+                        this.showMessage('Failed to load members', 'error');
+                    }
+                } catch (error) {
+                    console.error('Error loading members:', error);
+                    this.showMessage('Error loading members', 'error');
+                }
+            }
+
+            renderMembersTable() {
+                const container = document.getElementById('membersTableContainer');
+
+                if (this.currentMembers.length === 0) {
+                    container.innerHTML = '<p>No team members found.</p>';
+                    return;
+                }
+
+                const tableHTML = `
+                    <table class="members-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Post</th>
+                                <th>State</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${this.currentMembers.map(member => `
+                                <tr>
+                                    <td>${member.name}</td>
+                                    <td>${member.post}</td>
+                                    <td>${member.state}</td>
+                                    <td>${member.email || '-'}</td>
+                                    <td>${member.phone || '-'}</td>
+                                    <td>
+                                        <button class="btn-icon btn-edit" onclick="adminPanel.editMember('${member.id}')" title="Edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn-icon btn-delete" onclick="adminPanel.deleteMember('${member.id}')" title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
+
+                container.innerHTML = tableHTML;
+            }
+
+            showAddMemberForm() {
+                // Simple prompt-based form (you can enhance this with a proper modal)
+                const name = prompt('Enter member name:');
+                if (!name) return;
+
+                const post = prompt('Enter member post:');
+                if (!post) return;
+
+                const state = prompt('Enter member state:');
+                if (!state) return;
+
+                const email = prompt('Enter member email (optional):');
+                const phone = prompt('Enter member phone (optional):');
+                const photo = prompt('Enter member photo URL (optional):');
+
+                const memberData = {
+                    name: name.trim(),
+                    post: post.trim(),
+                    state: state.trim(),
+                    email: email ? email.trim() : '',
+                    phone: phone ? phone.trim() : '',
+                    photo: photo ? photo.trim() : ''
+                };
+
+                this.createMember(memberData);
+            }
+
+            async createMember(memberData) {
+                const result = await this.api.createMember(memberData);
+
+                if (result.success) {
+                    this.showMessage('Member created successfully!', 'success');
+                    this.loadMembers();
+                } else {
+                    this.showMessage(result.message, 'error');
+                }
+            }
+
+            editMember(memberId) {
+                const member = this.currentMembers.find(m => m.id === memberId);
+                if (!member) return;
+
+                // Simple prompt-based editing (you can enhance this with a proper form)
+                const name = prompt('Edit member name:', member.name);
+                if (name === null) return;
+
+                const post = prompt('Edit member post:', member.post);
+                if (post === null) return;
+
+                const state = prompt('Edit member state:', member.state);
+                if (state === null) return;
+
+                const email = prompt('Edit member email:', member.email || '');
+                const phone = prompt('Edit member phone:', member.phone || '');
+                const photo = prompt('Edit member photo URL:', member.photo || '');
+
+                const memberData = {
+                    name: name.trim(),
+                    post: post.trim(),
+                    state: state.trim(),
+                    email: email ? email.trim() : '',
+                    phone: phone ? phone.trim() : '',
+                    photo: photo ? photo.trim() : ''
+                };
+
+                this.updateMember(memberId, memberData);
+            }
+
+            async updateMember(memberId, memberData) {
+                const result = await this.api.updateMember(memberId, memberData);
+
+                if (result.success) {
+                    this.showMessage('Member updated successfully!', 'success');
+                    this.loadMembers();
+                } else {
+                    this.showMessage(result.message, 'error');
+                }
+            }
+
+            deleteMember(memberId) {
+                const member = this.currentMembers.find(m => m.id === memberId);
+                if (!member) return;
+
+                if (confirm(`Are you sure you want to delete ${member.name}?`)) {
+                    this.performDeleteMember(memberId);
+                }
+            }
+
+            async performDeleteMember(memberId) {
+                const result = await this.api.deleteMember(memberId);
+
+                if (result.success) {
+                    this.showMessage('Member deleted successfully!', 'success');
+                    this.loadMembers();
+                } else {
+                    this.showMessage(result.message, 'error');
+                }
+            }
+
+            showMessage(message, type) {
+                const messageDiv = document.getElementById('panelMessage');
+                messageDiv.innerHTML = `<div class="message ${type}">${message}</div>`;
+
+                setTimeout(() => {
+                    messageDiv.innerHTML = '';
+                }, 5000);
+            }
+        }
+
+        // Initialize admin panel when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            window.adminPanel = new AdminPanel();
+        });
+    </script>
+</body>
+
+</html>
