@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../css/index.css" rel="stylesheet" />
+    <link href="../css/gallery.css" rel="stylesheet" />
+    <title>Photo Gallery - Indian Human Rights Commission</title>
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+  </head>
+
+  <body>
+    <header class="top-header">
+      <div class="header-info">
+        <div class="header-icon">
+          <img src="../img/logo.png" alt="IHRC logo" />
+        </div>
+        <div class="header-name">
+          <div class="header-hindi">
+            <strong>भारतीय मानवाधिकार आयोग</strong>
+          </div>
+          <div class="header-english">
+            <strong>INDIAN HUMAN RIGHTS COMMISSION</strong>
+          </div>
+        </div>
+      </div>
+      <a href="./contact.html" class="header-cta"
+        >File a Complaint <i class="fas fa-arrow-right"></i
+      ></a>
+    </header>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" />
+    <label for="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </label>
+
+    <nav class="topnav">
+      <a href="../index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./work.html">What We Do</a>
+      <a href="./team.html">Team</a>
+      <a class="active" href="./photo-gallery.html">Photo Gallery</a>
+      <a href="./news-gallery.html">News</a>
+      <a href="./contact.html">Contact Us</a>
+      <a class="nav-cta" href="./contact.html">File a Complaint</a>
+    </nav>
+
+    <aside class="social-rail">
+      <a
+        href="https://www.instagram.com/ihrcindia?igsh=bXFqdjF0a2ZzNHQ="
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a
+        href="https://www.facebook.com/ihrcindia?mibextid=LQQJ4d"
+        target="_blank"
+        rel="noopener"
+        aria-label="Facebook"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a
+        href="https://x.com/ihrcindia01?s=11"
+        target="_blank"
+        rel="noopener"
+        aria-label="Twitter"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a
+        href="https://api.whatsapp.com/send?phone=9999845555"
+        target="_blank"
+        rel="noopener"
+        aria-label="WhatsApp"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+    </aside>
+
+    <!-- PAGE HERO -->
+    <section
+      class="page-hero"
+      style="background-image: url(&quot;../img/humanRights/big3.jpeg&quot;)"
+    >
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="hero-eyebrow">Our Moments</span>
+        <h1 class="hero-title">
+          Photo <span class="hero-accent">Gallery</span>
+        </h1>
+        <p class="hero-subtitle">
+          Glimpses of unity, awareness drives and milestones from our journey
+          across India.
+        </p>
+        <nav class="breadcrumbs">
+          <a href="../index.html">Home</a> <i class="fas fa-chevron-right"></i>
+          <span>Photo Gallery</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-preview" style="background: var(--c-bg-soft)">
+      <div class="section-inner">
+        <div class="eyebrow centered">
+          <span class="eyebrow-line"></span> EXPLORE
+          <span class="eyebrow-line"></span>
+        </div>
+        <h2 class="section-title centered">
+          Moments that <span class="accent">Define Us</span>
+        </h2>
+
+        <div class="gallery-filter" id="galleryFilter">
+          <button class="is-active" data-filter="all">All</button>
+          <button data-filter="events">Events</button>
+          <button data-filter="awareness">Awareness</button>
+          <button data-filter="leadership">Leadership</button>
+          <button data-filter="outreach">Outreach</button>
+        </div>
+
+        <div class="photo-grid" id="photoGrid">
+          <figure class="photo-item" data-cat="events">
+            <img src="../img/humanRights/big1.jpeg" alt="" />
+            <figcaption class="photo-caption">
+              Annual Convention &mdash; New Delhi
+            </figcaption>
+          </figure>
+          <figure class="photo-item" data-cat="awareness">
+            <img src="../img/humanRights/big2.jpeg" alt="" />
+            <figcaption class="photo-caption">
+              Rights Awareness Drive
+            </figcaption>
+          </figure>
+          <figure class="photo-item" data-cat="leadership">
+            <img src="../img/humanRights/big3.jpeg" alt="" />
+            <figcaption class="photo-caption">Leadership Summit</figcaption>
+          </figure>
+          <figure class="photo-item" data-cat="outreach">
+            <img src="../img/humanRights/big4.jpeg" alt="" />
+            <figcaption class="photo-caption">Community Outreach</figcaption>
+          </figure>
+          <figure class="photo-item" data-cat="events">
+            <img src="../img/humanRights/big5.jpeg" alt="" />
+            <figcaption class="photo-caption">State Chapter Meet</figcaption>
+          </figure>
+          <figure class="photo-item" data-cat="awareness">
+            <img src="../img/humanRights/big6.jpeg" alt="" />
+            <figcaption class="photo-caption">
+              School Awareness Programme
+            </figcaption>
+          </figure>
+          <figure class="photo-item" data-cat="outreach">
+            <img src="../img/humanRights/big7.jpeg" alt="" />
+            <figcaption class="photo-caption">
+              Women Empowerment Workshop
+            </figcaption>
+          </figure>
+          <figure class="photo-item" data-cat="events">
+            <img src="../img/humanRights/big8.jpeg" alt="" />
+            <figcaption class="photo-caption">Recognition Awards</figcaption>
+          </figure>
+          <figure class="photo-item" data-cat="leadership">
+            <img src="../img/humanRights/big9.jpeg" alt="" />
+            <figcaption class="photo-caption">Chairperson Address</figcaption>
+          </figure>
+          <figure class="photo-item" data-cat="outreach">
+            <img src="../img/humanRights/big10.jpeg" alt="" />
+            <figcaption class="photo-caption">
+              Field Visit &mdash; Rural India
+            </figcaption>
+          </figure>
+          <figure class="photo-item" data-cat="awareness">
+            <img src="../img/humanRights/big11.jpeg" alt="" />
+            <figcaption class="photo-caption">Public Symposium</figcaption>
+          </figure>
+          <figure class="photo-item" data-cat="events">
+            <img src="../img/humanRights/big12.jpeg" alt="" />
+            <figcaption class="photo-caption">National Conference</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lbClose" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <button class="lightbox-prev" id="lbPrev" aria-label="Previous">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="lightbox-next" id="lbNext" aria-label="Next">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <img id="lbImage" src="" alt="" />
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <img src="../img/logo.png" alt="IHRC logo" />
+            <div>
+              <div class="footer-title">Indian Human Rights Commission</div>
+              <p>
+                Our mission is to safeguard, protect and promote the fundamental
+                rights and dignity of every individual across India.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./work.html">What We Do</a></li>
+            <li><a href="./team.html">Team</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>More Info</h4>
+          <ul>
+            <li><a href="./photo-gallery.html">Photo Gallery</a></li>
+            <li><a href="./news-gallery.html">News Gallery</a></li>
+            <li><a href="./about.html#mission">Our Mission</a></li>
+            <li><a href="./about.html#values">Our Values</a></li>
+            <li><a href="./contact.html">Join Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i
+              ><span>125-A, Main Narela Road, Alipur, Delhi-110036</span>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i
+              ><a href="tel:+919999845555">+91-9999845555</a>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i
+              ><a href="mailto:ihrcindia01@gmail.com">ihrcindia01@gmail.com</a>
+            </li>
+          </ul>
+          <div class="footer-socials">
+            <a
+              href="https://www.facebook.com/ihrcindia?mibextid=LQQJ4d"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://x.com/ihrcindia01?s=11"
+              target="_blank"
+              rel="noopener"
+              aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/ihrcindia?igsh=bXFqdjF0a2ZzNHQ="
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span
+          >&copy; 2026 Indian Human Rights Commission. All rights
+          reserved.</span
+        >
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        // Filter
+        var filterBtns = document.querySelectorAll("#galleryFilter button");
+        var items = document.querySelectorAll("#photoGrid .photo-item");
+        filterBtns.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            filterBtns.forEach(function (b) {
+              b.classList.remove("is-active");
+            });
+            btn.classList.add("is-active");
+            var cat = btn.dataset.filter;
+            items.forEach(function (i) {
+              var show = cat === "all" || i.dataset.cat === cat;
+              i.style.display = show ? "" : "none";
+            });
+          });
+        });
+
+        // Lightbox
+        var lb = document.getElementById("lightbox");
+        var lbImg = document.getElementById("lbImage");
+        var imgs = Array.from(
+          document.querySelectorAll("#photoGrid .photo-item img"),
+        );
+        var idx = 0;
+        function open(i) {
+          idx = (i + imgs.length) % imgs.length;
+          lbImg.src = imgs[idx].src;
+          lb.classList.add("is-open");
+          lb.setAttribute("aria-hidden", "false");
+        }
+        function close() {
+          lb.classList.remove("is-open");
+          lb.setAttribute("aria-hidden", "true");
+        }
+        imgs.forEach(function (img, i) {
+          img.parentElement.addEventListener("click", function () {
+            open(i);
+          });
+        });
+        document.getElementById("lbClose").addEventListener("click", close);
+        document
+          .getElementById("lbPrev")
+          .addEventListener("click", function () {
+            open(idx - 1);
+          });
+        document
+          .getElementById("lbNext")
+          .addEventListener("click", function () {
+            open(idx + 1);
+          });
+        lb.addEventListener("click", function (e) {
+          if (e.target === lb) close();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (!lb.classList.contains("is-open")) return;
+          if (e.key === "Escape") close();
+          if (e.key === "ArrowLeft") open(idx - 1);
+          if (e.key === "ArrowRight") open(idx + 1);
+        });
+      })();
+    </script>
+  </body>
+</html>

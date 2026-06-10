@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../css/index.css" rel="stylesheet" />
+    <link href="../css/gallery.css" rel="stylesheet" />
+    <title>News Gallery - Indian Human Rights Commission</title>
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+  </head>
+
+  <body>
+    <header class="top-header">
+      <div class="header-info">
+        <div class="header-icon">
+          <img src="../img/logo.png" alt="IHRC logo" />
+        </div>
+        <div class="header-name">
+          <div class="header-hindi">
+            <strong>भारतीय मानवाधिकार आयोग</strong>
+          </div>
+          <div class="header-english">
+            <strong>INDIAN HUMAN RIGHTS COMMISSION</strong>
+          </div>
+        </div>
+      </div>
+      <a href="./contact.html" class="header-cta"
+        >File a Complaint <i class="fas fa-arrow-right"></i
+      ></a>
+    </header>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" />
+    <label for="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </label>
+
+    <nav class="topnav">
+      <a href="../index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./work.html">What We Do</a>
+      <a href="./team.html">Team</a>
+      <a href="./photo-gallery.html">Photo Gallery</a>
+      <a class="active" href="./news-gallery.html">News</a>
+      <a href="./contact.html">Contact Us</a>
+      <a class="nav-cta" href="./contact.html">File a Complaint</a>
+    </nav>
+
+    <aside class="social-rail">
+      <a
+        href="https://www.instagram.com/ihrcindia?igsh=bXFqdjF0a2ZzNHQ="
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a
+        href="https://www.facebook.com/ihrcindia?mibextid=LQQJ4d"
+        target="_blank"
+        rel="noopener"
+        aria-label="Facebook"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a
+        href="https://x.com/ihrcindia01?s=11"
+        target="_blank"
+        rel="noopener"
+        aria-label="Twitter"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a
+        href="https://api.whatsapp.com/send?phone=9999845555"
+        target="_blank"
+        rel="noopener"
+        aria-label="WhatsApp"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+    </aside>
+
+    <!-- PAGE HERO -->
+    <section
+      class="page-hero"
+      style="background-image: url(&quot;../img/humanRights/big7.jpeg&quot;)"
+    >
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="hero-eyebrow">Updates &amp; Press</span>
+        <h1 class="hero-title">
+          News <span class="hero-accent">Gallery</span>
+        </h1>
+        <p class="hero-subtitle">
+          Latest announcements, press coverage and stories from IHRC across
+          India.
+        </p>
+        <nav class="breadcrumbs">
+          <a href="../index.html">Home</a> <i class="fas fa-chevron-right"></i>
+          <span>News Gallery</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- NEWS LIST -->
+    <section class="gallery-preview" style="background: var(--c-bg-soft)">
+      <div class="section-inner">
+        <div class="eyebrow centered">
+          <span class="eyebrow-line"></span> LATEST NEWS
+          <span class="eyebrow-line"></span>
+        </div>
+        <h2 class="section-title centered">
+          News &amp; <span class="accent">Press Coverage</span>
+        </h2>
+
+        <div class="gallery-filter" id="newsFilter">
+          <button class="is-active" data-filter="all">All</button>
+          <button data-filter="press">Press Release</button>
+          <button data-filter="events">Events</button>
+          <button data-filter="campaign">Campaigns</button>
+          <button data-filter="awards">Awards</button>
+        </div>
+
+        <div class="news-grid" id="newsGrid" style="margin-top: 20px">
+          <!-- Featured -->
+          <article class="news-card featured" data-cat="press">
+            <div class="news-media">
+              <img src="./../img/humanRights/big3.jpeg" alt="" />
+              <span class="news-tag">Press Release</span>
+            </div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span><i class="far fa-calendar"></i>15 March 2026</span>
+                <span><i class="far fa-user"></i>IHRC Desk</span>
+              </div>
+              <h3 class="news-title">
+                IHRC Launches Nationwide Initiative to Strengthen Grievance
+                Redressal Mechanisms
+              </h3>
+              <p class="news-excerpt">
+                The Indian Human Rights Commission today announced a new
+                framework aimed at faster resolution of citizen complaints
+                across 18 state chapters. The programme strengthens
+                collaboration with local authorities while emphasising
+                transparency, accountability and time-bound action.
+              </p>
+              <a href="#" class="link-arrow"
+                >Read Full Story <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-cat="events">
+            <div class="news-media">
+              <img src="./../img/humanRights/big4.jpeg" alt="" />
+              <span class="news-tag">Event</span>
+            </div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span><i class="far fa-calendar"></i>2 March 2026</span>
+              </div>
+              <h3 class="news-title">
+                National Convention on Human Rights Concludes in New Delhi
+              </h3>
+              <p class="news-excerpt">
+                Delegates from 18 states gathered to discuss the road ahead for
+                community engagement and policy advocacy.
+              </p>
+              <a href="#" class="link-arrow"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-cat="campaign">
+            <div class="news-media">
+              <img src="./../img/humanRights/big6.jpeg" alt="" />
+              <span class="news-tag">Campaign</span>
+            </div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span><i class="far fa-calendar"></i>18 February 2026</span>
+              </div>
+              <h3 class="news-title">
+                'Know Your Rights' School Campaign Reaches 50,000 Students
+              </h3>
+              <p class="news-excerpt">
+                An awareness initiative across schools to empower the next
+                generation with knowledge of their constitutional rights.
+              </p>
+              <a href="#" class="link-arrow"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-cat="awards">
+            <div class="news-media">
+              <img src="./../img/humanRights/big8.jpeg" alt="" />
+              <span class="news-tag">Award</span>
+            </div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span><i class="far fa-calendar"></i>10 February 2026</span>
+              </div>
+              <h3 class="news-title">
+                IHRC Excellence Awards Honour 42 Grassroots Defenders
+              </h3>
+              <p class="news-excerpt">
+                Recognising the contributions of community workers, lawyers and
+                activists championing rights across India.
+              </p>
+              <a href="#" class="link-arrow"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-cat="press">
+            <div class="news-media">
+              <img src="./../img/humanRights/big9.jpeg" alt="" />
+              <span class="news-tag">Press Release</span>
+            </div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span><i class="far fa-calendar"></i>22 January 2026</span>
+              </div>
+              <h3 class="news-title">
+                IHRC Statement on Labour Rights and Workplace Dignity
+              </h3>
+              <p class="news-excerpt">
+                A new advisory urging stronger workplace protections for migrant
+                and informal-sector workers across India.
+              </p>
+              <a href="#" class="link-arrow"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-cat="events">
+            <div class="news-media">
+              <img src="./../img/humanRights/big10.jpeg" alt="" />
+              <span class="news-tag">Event</span>
+            </div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span><i class="far fa-calendar"></i>14 January 2026</span>
+              </div>
+              <h3 class="news-title">
+                Women Empowerment Workshop Held Across Five Districts
+              </h3>
+              <p class="news-excerpt">
+                Practical sessions on legal aid, financial literacy and
+                self-defence engaged hundreds of women participants.
+              </p>
+              <a href="#" class="link-arrow"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="news-card" data-cat="campaign">
+            <div class="news-media">
+              <img src="./../img/humanRights/big11.jpeg" alt="" />
+              <span class="news-tag">Campaign</span>
+            </div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span><i class="far fa-calendar"></i>6 January 2026</span>
+              </div>
+              <h3 class="news-title">
+                'Bal Suraksha' Initiative Strengthens Child Rights Outreach
+              </h3>
+              <p class="news-excerpt">
+                Field volunteers extend community-level protection mechanisms
+                for vulnerable children.
+              </p>
+              <a href="#" class="link-arrow"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+
+        <nav class="pagination" aria-label="News pagination">
+          <a href="#" aria-label="Previous"
+            ><i class="fas fa-chevron-left"></i
+          ></a>
+          <a href="#" class="is-active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#" aria-label="Next"><i class="fas fa-chevron-right"></i></a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <img src="../img/logo.png" alt="IHRC logo" />
+            <div>
+              <div class="footer-title">Indian Human Rights Commission</div>
+              <p>
+                Our mission is to safeguard, protect and promote the fundamental
+                rights and dignity of every individual across India.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./work.html">What We Do</a></li>
+            <li><a href="./team.html">Team</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>More Info</h4>
+          <ul>
+            <li><a href="./photo-gallery.html">Photo Gallery</a></li>
+            <li><a href="./news-gallery.html">News Gallery</a></li>
+            <li><a href="./about.html#mission">Our Mission</a></li>
+            <li><a href="./about.html#values">Our Values</a></li>
+            <li><a href="./contact.html">Join Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i
+              ><span>125-A, Main Narela Road, Alipur, Delhi-110036</span>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i
+              ><a href="tel:+919999845555">+91-9999845555</a>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i
+              ><a href="mailto:ihrcindia01@gmail.com">ihrcindia01@gmail.com</a>
+            </li>
+          </ul>
+          <div class="footer-socials">
+            <a
+              href="https://www.facebook.com/ihrcindia?mibextid=LQQJ4d"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://x.com/ihrcindia01?s=11"
+              target="_blank"
+              rel="noopener"
+              aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/ihrcindia?igsh=bXFqdjF0a2ZzNHQ="
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span
+          >&copy; 2026 Indian Human Rights Commission. All rights
+          reserved.</span
+        >
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var filterBtns = document.querySelectorAll("#newsFilter button");
+        var items = document.querySelectorAll("#newsGrid .news-card");
+        filterBtns.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            filterBtns.forEach(function (b) {
+              b.classList.remove("is-active");
+            });
+            btn.classList.add("is-active");
+            var cat = btn.dataset.filter;
+            items.forEach(function (i) {
+              var show = cat === "all" || i.dataset.cat === cat;
+              i.style.display = show ? "" : "none";
+            });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

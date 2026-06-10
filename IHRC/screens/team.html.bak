@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link href="../css/index.css" rel="stylesheet" />
+    <link href="../css/team.css" rel="stylesheet" />
+    <title>Our Team - Indian Human Rights Commission</title>
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+  </head>
+
+  <body class="team-page">
+    <header class="top-header">
+      <div class="header-info">
+        <div class="header-icon"><img src="../img/logo.png" alt="IHRC logo" /></div>
+        <div class="header-name">
+          <div class="header-hindi"><strong>भारतीय मानवाधिकार आयोग</strong></div>
+          <div class="header-english"><strong>INDIAN HUMAN RIGHTS COMMISSION</strong></div>
+        </div>
+      </div>
+      <a href="./contact.html" class="header-cta">File a Complaint <i class="fas fa-arrow-right"></i></a>
+    </header>
+
+    <nav class="topnav">
+      <a href="../index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./work.html">What We Do</a>
+      <a class="active" href="./team.html">Team</a>
+      <a href="./photo-gallery.html">Photo Gallery</a>
+      <a href="./news-gallery.html">News</a>
+      <a href="./contact.html">Contact Us</a>
+    </nav>
+
+    <aside class="social-rail">
+      <a href="https://www.instagram.com/ihrcindia?igsh=bXFqdjF0a2ZzNHQ=" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/ihrcindia?mibextid=LQQJ4d" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/ihrcindia01?s=11" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=9999845555" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </aside>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" style="background-image: url('../img/humanRights/big9.jpeg');">
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="hero-eyebrow">People Behind IHRC</span>
+        <h1 class="hero-title">Our <span class="hero-accent">Team</span></h1>
+        <p class="hero-subtitle">Meet the dedicated individuals working for human rights across India.</p>
+        <nav class="breadcrumbs">
+          <a href="../index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Team</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP HIGHLIGHT -->
+    <section class="leadership-section">
+      <div class="section-inner">
+        <div class="eyebrow centered">
+          <span class="eyebrow-line"></span> CORE LEADERSHIP <span class="eyebrow-line"></span>
+        </div>
+        <h2 class="section-title centered">
+          Leading with <span class="accent">Integrity</span>
+        </h2>
+        <div class="leadership-grid">
+          <div class="leader-card">
+            <div class="leader-photo"><img src="../img/team/rajesh.jpeg" alt="Rajesh Jain" /></div>
+            <h3>Rajesh Jain</h3>
+            <p>Chairperson</p>
+          </div>
+          <div class="leader-card">
+            <div class="leader-photo"><img src="../img/team/ashish.jpg" alt="Ashish Pathak" /></div>
+            <h3>Ashish Pathak</h3>
+            <p>National IT Head</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM DIRECTORY -->
+    <section class="team-directory">
+      <div class="section-inner">
+        <div class="eyebrow centered">
+          <span class="eyebrow-line"></span> FULL DIRECTORY <span class="eyebrow-line"></span>
+        </div>
+        <h2 class="section-title centered">
+          Meet Our <span class="accent">Members</span>
+        </h2>
+        <p class="section-lead centered">
+          A nationwide network of leaders, advocates and volunteers committed to upholding human rights.
+        </p>
+
+        <!-- Search and Filter Controls -->
+        <div class="team-controls">
+          <div class="search-container">
+            <div class="search-input-wrap">
+              <i class="fas fa-search"></i>
+              <input type="text" id="searchInput" class="search-input"
+                placeholder="Search by name, position, or state..." />
+            </div>
+            <div class="select-wrap">
+              <i class="fas fa-filter"></i>
+              <select id="stateFilter" class="filter-select">
+                <option value="">All States</option>
+              </select>
+            </div>
+          </div>
+          <div class="results-info" id="resultsInfo">Loading members...</div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="loading">
+          <i class="fas fa-spinner fa-spin"></i>
+          <p>Loading team members...</p>
+        </div>
+
+        <!-- No Results State -->
+        <div id="noResults" class="no-results" style="display: none">
+          <i class="fas fa-search"></i>
+          <h3>No members found</h3>
+          <p>Try adjusting your search criteria</p>
+        </div>
+
+        <!-- Team Grid -->
+        <div id="teamGrid" class="team-grid">
+          <!-- Team members will be loaded here by JavaScript -->
+        </div>
+
+        <!-- Pagination -->
+        <div id="pagination" class="team-pagination">
+          <!-- Pagination buttons will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN CTA -->
+    <section class="cta-band-light">
+      <div class="section-inner cta-inner">
+        <div>
+          <h2 class="section-title" style="margin-bottom: 8px;">
+            Want to Join <span class="accent">IHRC?</span>
+          </h2>
+          <p style="color: var(--c-ink-soft); max-width: 640px;">
+            We're building a network of citizens, volunteers, and professionals across India. Reach out to learn how
+            you can contribute.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="./contact.html" class="btn-primary">Get In Touch <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <img src="../img/logo.png" alt="IHRC logo" />
+            <div>
+              <div class="footer-title">Indian Human Rights Commission</div>
+              <p>Our mission is to safeguard, protect and promote the fundamental rights and dignity of every individual across India.</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./work.html">What We Do</a></li>
+            <li><a href="./team.html">Team</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>More Info</h4>
+          <ul>
+            <li><a href="./photo-gallery.html">Photo Gallery</a></li>
+            <li><a href="./news-gallery.html">News Gallery</a></li>
+            <li><a href="./about.html#mission">Our Mission</a></li>
+            <li><a href="./about.html#values">Our Values</a></li>
+            <li><a href="./contact.html">Join Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i><span>125-A, Main Narela Road, Alipur, Delhi-110036</span></li>
+            <li><i class="fa fa-phone"></i><a href="tel:+919999845555">+91-9999845555</a></li>
+            <li><i class="fa fa-envelope"></i><a href="mailto:ihrcindia01@gmail.com">ihrcindia01@gmail.com</a></li>
+          </ul>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/ihrcindia?mibextid=LQQJ4d" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/ihrcindia01?s=11" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/ihrcindia?igsh=bXFqdjF0a2ZzNHQ=" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Indian Human Rights Commission. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <!-- Team JavaScript -->
+    <script src="../js/team.js"></script>
+  </body>
+</html>
