@@ -5,11 +5,12 @@
 /* Reuse page-hero from other pages */
 .page-hero {
   position: relative;
-  max-height: 370px;
-  background-size: auto;
+  min-height: 320px;
+  max-height: 420px;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,17 +21,8 @@
 .page-hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(2, 12, 27, 0.56) 0%,
-      rgba(2, 12, 27, 0.76) 100%
-    ),
-    radial-gradient(
-      ellipse at center,
-      rgba(148, 163, 184, 0.22) 0%,
-      transparent 60%
-    );
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
 }
 .page-hero-content {
   position: relative;
@@ -41,9 +33,27 @@
 .page-hero .hero-title {
   margin-bottom: 14px;
   font-size: clamp(2.2rem, 5vw, 3.6rem);
+  text-shadow:
+    -2px -2px 0 rgba(0, 0, 0, 0.9),
+    2px -2px 0 rgba(0, 0, 0, 0.9),
+    -2px 2px 0 rgba(0, 0, 0, 0.9),
+    2px 2px 0 rgba(0, 0, 0, 0.9),
+    -3px 0 0 rgba(0, 0, 0, 0.8),
+    3px 0 0 rgba(0, 0, 0, 0.8),
+    0 -3px 0 rgba(0, 0, 0, 0.8),
+    0 3px 0 rgba(0, 0, 0, 0.8);
 }
 .page-hero .hero-subtitle {
   margin-bottom: 24px;
+  text-shadow:
+    -1px -1px 0 rgba(0, 0, 0, 0.95),
+    1px -1px 0 rgba(0, 0, 0, 0.95),
+    -1px 1px 0 rgba(0, 0, 0, 0.95),
+    1px 1px 0 rgba(0, 0, 0, 0.95),
+    -2px 0 0 rgba(0, 0, 0, 0.85),
+    2px 0 0 rgba(0, 0, 0, 0.85),
+    0 -2px 0 rgba(0, 0, 0, 0.85),
+    0 2px 0 rgba(0, 0, 0, 0.85);
 }
 
 .breadcrumbs {

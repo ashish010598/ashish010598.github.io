@@ -466,18 +466,8 @@ img {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(3, 8, 20, 0.42) 0%,
-      rgba(3, 8, 20, 0.62) 60%,
-      rgba(3, 8, 20, 0.8) 100%
-    ),
-    radial-gradient(
-      ellipse at center,
-      rgba(148, 163, 184, 0.22) 0%,
-      transparent 60%
-    );
+  background: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
 }
 .hero-content {
   position: relative;
@@ -499,7 +489,7 @@ img {
   padding: 8px 18px;
   border-radius: 999px;
   margin-bottom: 24px;
-  color: #ffffff;
+  color: #000000;
   backdrop-filter: blur(6px);
 }
 .hero-title {
@@ -508,7 +498,15 @@ img {
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.5px;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  text-shadow:
+    -2px -2px 0 rgba(0, 0, 0, 0.9),
+    2px -2px 0 rgba(0, 0, 0, 0.9),
+    -2px 2px 0 rgba(0, 0, 0, 0.9),
+    2px 2px 0 rgba(0, 0, 0, 0.9),
+    -3px 0 0 rgba(0, 0, 0, 0.8),
+    3px 0 0 rgba(0, 0, 0, 0.8),
+    0 -3px 0 rgba(0, 0, 0, 0.8),
+    0 3px 0 rgba(0, 0, 0, 0.8);
   margin-bottom: 24px;
 }
 .hero-accent {
@@ -519,7 +517,8 @@ img {
   background-clip: text;
   color: transparent;
   font-style: italic;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.38));
+  text-shadow: none;
+  filter: drop-shadow(0 4px 14px rgba(10, 10, 10, 10));
 }
 .hero-subtitle {
   font-size: clamp(1rem, 1.4vw, 1.2rem);
