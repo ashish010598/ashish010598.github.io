@@ -22,12 +22,12 @@
   background:
     linear-gradient(
       180deg,
-      rgba(20, 10, 0, 0.55) 0%,
-      rgba(20, 10, 0, 0.75) 100%
+      rgba(2, 12, 27, 0.56) 0%,
+      rgba(2, 12, 27, 0.76) 100%
     ),
     radial-gradient(
       ellipse at center,
-      rgba(211, 84, 0, 0.2) 0%,
+      rgba(148, 163, 184, 0.22) 0%,
       transparent 60%
     );
 }
@@ -60,7 +60,7 @@
   backdrop-filter: blur(6px);
 }
 .breadcrumbs a {
-  color: #ffd28a;
+  color: #cbd5e1;
 }
 .breadcrumbs a:hover {
   color: #fff;
