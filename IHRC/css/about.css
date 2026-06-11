@@ -5,8 +5,9 @@
 /* Page hero */
 .page-hero {
   position: relative;
-  min-height: 380px;
+  max-height: 370px;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   display: flex;

@@ -5,8 +5,8 @@
 /* Page hero (shared pattern) */
 .page-hero {
   position: relative;
-  min-height: 380px;
-  background-size: cover;
+  max-height: 370px;
+  background-size: contain;
   background-position: center;
   background-attachment: fixed;
   display: flex;

@@ -761,8 +761,8 @@ img {
   border-radius: 50%;
 }
 .wwd-icon img {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
 }
 .wwd-card h3 {
@@ -1444,8 +1444,8 @@ img {
     height: 80px;
   }
   .wwd-icon img {
-    width: 48px;
-    height: 48px;
+    width: 80px;
+    height: 80px;
   }
 
   .footer-col h4 {

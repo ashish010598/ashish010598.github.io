@@ -2,6 +2,49 @@
    GALLERY PAGES (Photo Gallery + News Gallery)
    ============================================================ */
 
+.page-hero {
+  position: relative;
+  max-height: 370px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 22px 60px;
+  max-width: 900px;
+}
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2, 12, 27, 0.56) 0%,
+      rgba(2, 12, 27, 0.78) 100%
+    ),
+    radial-gradient(
+      ellipse at center,
+      rgba(148, 163, 184, 0.22) 0%,
+      transparent 60%
+    );
+}
+.page-hero .hero-title {
+  margin-bottom: 14px;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+.page-hero .hero-subtitle {
+  margin-bottom: 24px;
+}
+
 /* Filter bar */
 .gallery-filter {
   display: flex;
